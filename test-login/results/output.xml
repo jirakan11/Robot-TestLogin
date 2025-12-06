@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-12-06T16:05:29.022252" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Login" source="c:\Users\HP\Desktop\Automate Test\test-login">
+<suite id="s1-s1" name="Login-Test" source="c:\Users\HP\Desktop\Automate Test\test-login\login-test.robot">
+<test id="s1-s1-t1" name="Login success" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:29.501244" level="INFO">Opening browser 'Chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:05:29.500519" elapsed="4.957901"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:34.460883" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:34.459150" elapsed="0.126372"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:34.587643" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${VALID_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:34.586786" elapsed="0.106551"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:34.694531" level="INFO">Clicking button 'xpath=//button[@type="submit"]'.</msg>
+<arg>xpath=//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:34.693971" elapsed="0.090427"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:35.406976" level="INFO">Current page contains text 'You logged into a secure area!'.</msg>
+<arg>You logged into a secure area!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:05:34.785297" elapsed="0.622476"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:35.410369" level="INFO">Clicking element 'xpath=//a[@href="/logout"]'.</msg>
+<arg>xpath=//a[@href="/logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:35.408841" elapsed="0.679522"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:36.104970" level="INFO">Current page contains text 'You logged out of the secure area!'.</msg>
+<arg>You logged out of the secure area!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:05:36.088927" elapsed="0.016284"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-06T16:05:39.106487" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-06T16:05:36.105626" elapsed="3.001455"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:05:39.107597" elapsed="2.272786"/>
+</kw>
+<doc>To verify that a user can login successfully when they put a correct username and password.</doc>
+<status status="PASS" start="2025-12-06T16:05:29.495139" elapsed="11.885863"/>
+</test>
+<test id="s1-s1-t2" name="Login failed - Password incorrect" line="26">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:41.391946" level="INFO">Opening browser 'Chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:05:41.391499" elapsed="2.558721"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:43.955483" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:43.954683" elapsed="2.653665"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:46.610425" level="INFO">Typing text 'Password!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${INVALID_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:46.609099" elapsed="0.083190"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:46.693057" level="INFO">Clicking button 'xpath=//button[@type="submit"]'.</msg>
+<arg>xpath=//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:46.692636" elapsed="0.717844"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:47.430390" level="INFO">Current page contains text 'Your password is invalid!'.</msg>
+<arg>Your password is invalid!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:05:47.411091" elapsed="0.020318"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-06T16:05:50.433100" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-06T16:05:47.432028" elapsed="3.001759"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:05:50.434298" elapsed="2.249941"/>
+</kw>
+<doc>To verify that a user cannot login with correct username but wrong password.</doc>
+<status status="PASS" start="2025-12-06T16:05:41.387010" elapsed="11.297803"/>
+</test>
+<test id="s1-s1-t3" name="Login failed - Username not found" line="36">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:52.694889" level="INFO">Opening browser 'Chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:05:52.694438" elapsed="5.042060"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:57.737906" level="INFO">Typing text 'tomholland' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${INVALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:57.737154" elapsed="0.120488"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:57.859704" level="INFO">Typing text 'Password!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${INVALID_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:57.858842" elapsed="0.084882"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:57.944649" level="INFO">Clicking button 'xpath=//button[@type="submit"]'.</msg>
+<arg>xpath=//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:05:57.944085" elapsed="0.699600"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:05:58.659319" level="INFO">Current page contains text 'Your username is invalid!'.</msg>
+<arg>Your username is invalid!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:05:58.644040" elapsed="0.015993"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-06T16:06:01.661497" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-06T16:05:58.660478" elapsed="3.001890"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:06:01.662852" elapsed="2.276345"/>
+</kw>
+<doc>To verify that a user cannot login with a username that does not exist.</doc>
+<status status="PASS" start="2025-12-06T16:05:52.690065" elapsed="11.249640"/>
+</test>
+<status status="PASS" start="2025-12-06T16:05:29.075669" elapsed="34.869247"/>
+</suite>
+<status status="PASS" start="2025-12-06T16:05:29.027839" elapsed="34.921710"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test-Login" id="s1" pass="3" fail="0" skip="0">Test-Login</stat>
+<stat name="Login-Test" id="s1-s1" pass="3" fail="0" skip="0">Test-Login.Login-Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
